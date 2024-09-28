@@ -432,10 +432,6 @@ class Linkedin(object):
         for item in data:
             if (
                 not include_private_profiles
-                and (item.get("entityCustomTrackingInfo") or {}).get(
-                    "memberDistance", None
-                )
-                == "OUT_OF_NETWORK"
             ):
                 continue
             results.append(
